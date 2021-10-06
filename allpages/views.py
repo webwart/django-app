@@ -10,10 +10,10 @@ from django.http import HttpResponse
 # The templates folder is assumed !!
 
 def home_view(request):
-    return render(request, 'allpages/index.html')
+    return render(request, 'allpages/index.html' , {'title': 'Home'})
 
 def about_view(request):
-    return render(request, 'allpages/about.html')
+    return render(request, 'allpages/about.html', {'title': 'About us'} )
 
 def privacy_view(request):
-    return render(request, 'allpages/privacy.html')
+    return render(request, 'allpages/privacy.html', {'title': 'Privacy Policy'})
