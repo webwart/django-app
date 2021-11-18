@@ -1,0 +1,27 @@
+{% extends "allpages/base.html" %}
+{% block headcontent %}
+<style>
+p label {
+    display: inline-block;
+    width: 120 px;
+    text-align: right;
+    front-weight: bold;
+}
+
+</style>
+{% endblock headcontent %}
+
+
+{% block maincontent %}
+<div class="tabel-form">
+<form method="post">
+    {% csrf_token%}
+    <table>
+    {{ form.as_table }}
+    </table>
+<input type="submit" value="Create"> 
+</div>
+</form> 
+
+
+{% endblock maincontent %}

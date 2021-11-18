@@ -1,0 +1,25 @@
+{% extends "allpages/base.html" %}
+{% block maincontent %}
+    <h1>Videos</h1>
+    <p> This is text from the file: allpages/templates/allpages/video_list.html. VERSION: Table 4:30</p>
+
+    <table>
+    <tr>
+        <th>Title </th>
+        <th>Author </th>
+    </tr>
+    {% for video in object_list%}
+    <tr>
+        <td>
+            <a href="https://www.youtube.com/watch?v={{video.youtube_vid}}">
+                    {{ video.title }}
+            </a>    
+        </td>
+        <td>
+            {{video.author}}
+        </td>
+    </tr>
+    {% endfor %}
+    
+ </table>
+{% endblock maincontent %}
