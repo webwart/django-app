@@ -3,6 +3,11 @@
 {% block headcontent %}
 <!-- All of these style rules can go into an external style sheet.-->
 <!-- Made them internal here so they'd be easy to find. -->
+
+<!--    table.videos td:nth-child(1) {
+        text-align: center;
+    }   -->
+
 <style>
     table.videos {
         border-collapse: collapse;
@@ -14,10 +19,9 @@
         border: solid 1px silver;
         padding: 0 4px;
     }
-
     table.videos td:nth-child(1) {
         text-align: center;
-    }
+    }   
 
     table.videos td:nth-child(2) {
         max-width: 650px;
@@ -66,30 +70,34 @@
 
 {% block maincontent %}
     <h1>Companies</h1>
-    <p> This is text from the file: allpages/templates/allpages/video_list.html. VERSION: 32. Formatting Database 6:50 no hyperlink , each row is clickable. 8:00 adding CSS
+    <p> Template: allpages/templates/allpages/companyinfo_list.html.
 </p>
-<p>Click any row's edit itcon to edit the company record, or <a href="{% url 'cominfo-create' %}">click here to add a new company"</a></p>
+<H3>Click<a href="{% url 'cominfo-create' %}">-HERE-</a>to add a new company</H3>
 
     <table class=videos>
     <tr>
-        <th>Edit </th>
+<!--        <th>Edit </th>   -->
         <th>Company </th>
         <th>CEO </th>
+        <th>Region </th>
         <th>Rating </th>
     </tr>
     {% for CompanyInfo in object_list %}
     <tr>
-        <td>
+<!--        <td>
             <a href="{% url 'cominfo-update' CompanyInfo.id %}" class="fa fa-edit"></a>
-        </td>
-        <td style="text-decoration: {% if CompanyInfo.is_active %} none {% else %} line-through {% endif %}">
+        </td>   -->
+        <td style="text-decoration:{% if CompanyInfo.is_active %}none{% else %}line-through {% endif %}">
             {{ CompanyInfo.company }}
         </td>
         <td>
             {{CompanyInfo.ceo}}
         </td>
         <td>
-            <div style="width: calc(20% * {{ CompanyInfo.stars_count}}) "> </div>
+            {{CompanyInfo.region}}
+        </td>
+        <td>
+            <div style="width: calc(20% * {{ CompanyInfo.stars_count }}) "> </div>
             <img src="{% static 'allpages/images/stars.png' %}" alt="{{ CompanyInfo.stars_count}}" title = "{{ CompanyInfo.stars_count}}">
         </td>
     </tr>

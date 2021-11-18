@@ -34,12 +34,23 @@
 {% endblock headcontent %}
 
 {% block maincontent %}
-    <h1> Site Home Page for Info-Biologika</h1>
+    <h1> Test site for Info-Biologika / MPP project</h1>
     <p> Django 3.2.7 | PostgreSQL 13.xx | Digital Ocean | Template : allpages/templates/allpages/index.html .</p>
-    <b><hr></b>
-    <p>Here I maintain a list of youtube videos for playback within the web-site. I classified them into content about "HTML/CSS", "Javascript", "Python", "Django" represented by each of the blue button.</button></p>
+    <hr>
+    <h4>Test objectives:</h4><p> a) Django server set-up at Digital Ocean, with PostgreSQL database b) Use of two different datasets c) add, update, and delete entry from the video dataset d) display results from a search by catagory.</p> 
+    <hr>
+    <p>Test video database: Display a list with entries, from there you can add, update, and delete a database entry for a video.</p>
+    <nav class="button-links">
+        <h2> Video all </h2>
+        <a href="{% url 'videos-list' %}">List</a>
+        {% if request.user.is_superuser %}
+            <a href="{% url 'videos-list'  %}">Video List</a>
+        {% endif %}
+    </nav>
+    <hr>
+    <p>Test video database: Pre-selected entries classified by catagories "HTML/CSS", "Javascript", "Python", "Django"</button></p>
         <nav class="button-links">
-            <h2> Video Links </h2>
+            <h2> Videos by catagory </h2>
             <a href="{% url 'videos-thumbs' 1 %}">HTML/CSS </a>
             <a href="{% url 'videos-thumbs' 2 %}">JavaScript</a>
             <a href="{% url 'videos-thumbs' 3 %}">Python</a>
@@ -48,11 +59,12 @@
                 <a href="{% url 'videos-list'  %}">Video List</a>
             {% endif %}
         </nav>
-        <b><hr></b>
-        <p>Here I test add,update,delete a company record for Medicine Patent Pool</p>
+    <hr>
+        <p>Test company database: a) display a list with entries b) add an entry for a company </p>
         <nav class="button-links">
             <h2> Company Links </h2>
-            <a href="{% url 'cominfo-list' %}">MPP companies </a>
+            <a href="{% url 'cominfo-list' %}">List companies </a>
+            <a href="{% url 'cominfo-create' %}">Add company </a>
             {% if request.user.is_superuser %}
                 <a href="{% url 'cominfo-list'  %}">Video List</a>
             {% endif %}
