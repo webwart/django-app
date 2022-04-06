@@ -18,6 +18,7 @@ from django.urls import include, path
 from allpages import views
 
 
+
 urlpatterns = [
     path('', views.home_view, name='allpages-home'),
     path('about/', views.about_view, name='allpages-about'),
