@@ -1,0 +1,30 @@
+/* Site-Wide Style Sheet (Optional) */
+
+/* Google Fonts (optional) */
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Source+Code+Pro|Source+Sans+Pro&display=swap');
+
+/*
+font-family: 'Montserrat', sans-serif;
+font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Source Code Pro', monospace;
+
+I can take the hex-codes from the: https://color.adobe.com/de/create/color-wheel
+Dark color: #7F26A6  ( dark pink )
+Between color: #BD9FC6  ( grey )
+Ligth color: #FFCBF5   ( pink )
+
+For the tutorial I use:
+Dark color: black
+Light color: silver
+
+
+*/
+
+
+.top-padding-1{
+    padding-top: 14px;
+}
+
+.top-padding{
+    padding-top: 15px;
+}
